@@ -1,0 +1,33 @@
+package com.github.hadesfranklyn.ufal.waterconsumption;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.model.Users;
+import com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation;
+
+@SpringBootApplication
+@EnableConfigServer
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+		
+		int[] valores = {12,32,54,6,8,89,64,64,6};
+		double sum = 0;
+		for(int i =0; i<valores.length; i++) {
+			sum+=valores[i];
+		}
+		
+	
+		
+		
+		Irrigation irrigation = new Irrigation(200.0, 2.0);
+		
+		System.out.println(irrigation.areaToBeIrrigated());
+		System.out.println(sum);
+		
+	}
+
+}

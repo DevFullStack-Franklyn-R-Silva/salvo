@@ -1,0 +1,41 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.dtos.IrrigationDTO;
+import com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation;
+import com.github.hadesfranklyn.ufal.waterconsumption.repositories.IrrigationRepository;
+
+@Service
+public class IrrigationService {
+	
+	@Autowired
+	private IrrigationRepository repository;
+	
+
+	public Page<IrrigationDTO> findAll(Pageable pageable) {
+		Page<Irrigation> result = repository.findAll(pageable);
+		Page<IrrigationDTO> page = result.map(x -> new IrrigationDTO(x));
+		return page;
+	}
+	
+
+
+	@Transactional(readOnly = true)
+	public IrrigationDTO findById(Long id) {
+		Irrigation result = repository.findById(id).get();
+		IrrigationDTO dto = new IrrigationDTO(result);
+		return dto;
+	}
+
+
+
+	public Irrigation create(Irrigation person) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

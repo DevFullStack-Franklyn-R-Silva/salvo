@@ -1,0 +1,81 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+public class Consumption {
+
+
+	private Integer numberOfUsers;
+	private Double toilet; //vaso
+	private Double faucet; //torneira
+	private Double shower; //chuveiro
+	private Double urinal; //mictorio
+	private Double drinkingFountain; // bebedouro
+	
+	//constructors
+	public Consumption() {
+		super();
+	}
+
+	public Consumption(Integer numberOfUsers, Double toilet, Double faucet, Double shower, Double urinal,
+			Double drinkingFountain) {
+		super();
+		this.numberOfUsers = numberOfUsers;
+		this.toilet = toilet;
+		this.faucet = faucet;
+		this.shower = shower;
+		this.urinal = urinal;
+		this.drinkingFountain = drinkingFountain;
+	}
+	
+	// get e set
+	public Integer getNumberOfUsers() {
+		return numberOfUsers;
+	}
+
+	public void setNumberOfUsers(Integer numberOfUsers) {
+		this.numberOfUsers = numberOfUsers;
+	}
+
+	public Double getToilet() {
+		return toilet;
+	}
+
+	public void setToilet(Double toilet) {
+		this.toilet = toilet;
+	}
+
+	public Double getFaucet() {
+		return faucet;
+	}
+
+	public void setFaucet(Double faucet) {
+		this.faucet = faucet;
+	}
+
+	public Double getShower() {
+		return shower;
+	}
+
+	public void setShower(Double shower) {
+		this.shower = shower;
+	}
+
+	public Double getUrinal() {
+		return urinal;
+	}
+
+	public void setUrinal(Double urinal) {
+		this.urinal = urinal;
+	}
+
+	public Double getDrinkingFountain() {
+		return drinkingFountain;
+	}
+
+	public void setDrinkingFountain(Double drinkingFountain) {
+		this.drinkingFountain = drinkingFountain;
+	}
+
+	//methods
+	
+	
+}

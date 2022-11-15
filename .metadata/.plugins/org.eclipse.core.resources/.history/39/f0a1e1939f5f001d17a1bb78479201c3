@@ -1,0 +1,6 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+@Entity
+public class Irrigation {
+
+}

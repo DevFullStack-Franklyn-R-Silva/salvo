@@ -1,0 +1,24 @@
+package com.github.hadesfranklyn.ufal.waterconsumption;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation;
+
+@SpringBootApplication
+@EnableConfigServer
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+		
+		
+		
+		Irrigation irrigation = new Irrigation(200.0, 2.0);
+		
+		System.out.println(irrigation.areaToBeIrrigated());
+		
+	}
+
+}

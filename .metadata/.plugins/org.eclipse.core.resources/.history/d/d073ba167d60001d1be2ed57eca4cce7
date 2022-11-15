@@ -1,0 +1,15 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: water-consumption-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hadesfranklyn/WaterConsumption-config-sever-git
+          #username: username #Se for privado
+          #password: password #Se for privado
+          default-label: main
+          search-paths:
+          - water-consumption-service # E o nome da pasta que esta no git

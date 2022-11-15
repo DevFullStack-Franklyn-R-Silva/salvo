@@ -1,0 +1,5 @@
+package com.github.hadesfranklyn.bookservice.proxy;
+
+public class CambioProxy {
+
+}

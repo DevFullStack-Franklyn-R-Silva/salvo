@@ -1,0 +1,34 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.services;
+
+import java.text.ParseException;
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation;
+import com.github.hadesfranklyn.ufal.waterconsumption.repositories.IrrigationRepository;
+
+@Service
+public class DBService {
+
+
+	@Autowired
+	private IrrigationRepository irrigationRepository;
+	
+	public void instantieteTestDatabase() throws ParseException {
+		
+		Irrigation irrigation1 = new Irrigation(null, 200.0,2.0);
+		Irrigation irrigation2 = new Irrigation(null, 100.0,2.0);
+		Irrigation irrigation3 = new Irrigation(null, 50.0,2.0);
+		Irrigation irrigation4 = new Irrigation(null, 400.0,2.0);
+		Irrigation irrigation5 = new Irrigation(null, 600.0,2.0);
+		Irrigation irrigation6 = new Irrigation(null, 200.0,3.0);
+		Irrigation irrigation7 = new Irrigation(null, 100.0,4.0);
+		Irrigation irrigation8 = new Irrigation(null, 500.0,5.0);
+		
+
+		irrigationRepository.saveAll(Arrays.asList(irrigation1, irrigation2, irrigation3, irrigation4, 
+				irrigation5, irrigation6, irrigation7,irrigation8));
+	}
+}

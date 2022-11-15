@@ -1,0 +1,5 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.services;
+
+public class ObjectNotFoundException {
+
+}

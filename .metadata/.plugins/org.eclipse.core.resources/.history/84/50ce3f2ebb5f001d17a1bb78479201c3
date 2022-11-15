@@ -1,0 +1,30 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.dtos.IrrigationDTO;
+import com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation;
+import com.github.hadesfranklyn.ufal.waterconsumption.repositories.IrrigationRepository;
+import com.github.hadesfranklyn.ufal.waterconsumption.services.exceptions.ObjectNotFoundException;
+
+@Service
+public class IrrigationService {
+	
+	@Autowired
+	private IrrigationRepository repository;
+	
+	public List<IrrigationDTO> findAll() {
+		return repository.findAll();
+	}
+	
+
+	public Irrigation findById(Long id) {
+		Optional<IrrigationDTO> obj = repository.findById(id);
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Irrigation.class.getName()));
+	}
+}

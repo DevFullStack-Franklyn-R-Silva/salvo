@@ -1,0 +1,9 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.dtos;
+
+import java.io.Serializable;
+
+public class IrrigationDTO implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	
+}

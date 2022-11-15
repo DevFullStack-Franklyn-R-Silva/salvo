@@ -1,0 +1,157 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Consumption implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	// número de pessoas que utilizam o aparelho
+	private Integer numberOfUsers;
+
+	// Consumo por aparelho
+	private Double toilet; // vaso
+	private Double faucet; // torneira
+	private Double shower; // chuveiro
+	private Double urinal; // mictorio
+	private Double drinkingFountain; // bebedouro
+
+	// Consumo médio (per capita) diário por aparelho;
+	private List<Double> averageConsumptionOfTheToilet = new ArrayList<>();
+	private List<Double> averageTapConsumption = new ArrayList<>();
+	private List<Double> averageShowerConsumption = new ArrayList<>();
+	private List<Double> averageUrinalConsumption = new ArrayList<>();
+	private List<Double> averageDrinkingWaterConsumption = new ArrayList<>();
+	
+	public Consumption(Long id, Integer numberOfUsers, Double toilet, Double faucet, Double shower, Double urinal,
+			Double drinkingFountain, List<Double> averageConsumptionOfTheToilet, List<Double> averageTapConsumption,
+			List<Double> averageShowerConsumption, List<Double> averageUrinalConsumption,
+			List<Double> averageDrinkingWaterConsumption) {
+		super();
+		this.id = id;
+		this.numberOfUsers = numberOfUsers;
+		this.toilet = toilet;
+		this.faucet = faucet;
+		this.shower = shower;
+		this.urinal = urinal;
+		this.drinkingFountain = drinkingFountain;
+		this.averageConsumptionOfTheToilet = averageConsumptionOfTheToilet;
+		this.averageTapConsumption = averageTapConsumption;
+		this.averageShowerConsumption = averageShowerConsumption;
+		this.averageUrinalConsumption = averageUrinalConsumption;
+		this.averageDrinkingWaterConsumption = averageDrinkingWaterConsumption;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getNumberOfUsers() {
+		return numberOfUsers;
+	}
+
+	public void setNumberOfUsers(Integer numberOfUsers) {
+		this.numberOfUsers = numberOfUsers;
+	}
+
+	public Double getToilet() {
+		return toilet;
+	}
+
+	public void setToilet(Double toilet) {
+		this.toilet = toilet;
+	}
+
+	public Double getFaucet() {
+		return faucet;
+	}
+
+	public void setFaucet(Double faucet) {
+		this.faucet = faucet;
+	}
+
+	public Double getShower() {
+		return shower;
+	}
+
+	public void setShower(Double shower) {
+		this.shower = shower;
+	}
+
+	public Double getUrinal() {
+		return urinal;
+	}
+
+	public void setUrinal(Double urinal) {
+		this.urinal = urinal;
+	}
+
+	public Double getDrinkingFountain() {
+		return drinkingFountain;
+	}
+
+	public void setDrinkingFountain(Double drinkingFountain) {
+		this.drinkingFountain = drinkingFountain;
+	}
+
+	public List<Double> getAverageConsumptionOfTheToilet() {
+		return averageConsumptionOfTheToilet;
+	}
+
+	public void setAverageConsumptionOfTheToilet(List<Double> averageConsumptionOfTheToilet) {
+		this.averageConsumptionOfTheToilet = averageConsumptionOfTheToilet;
+	}
+
+	public List<Double> getAverageTapConsumption() {
+		return averageTapConsumption;
+	}
+
+	public void setAverageTapConsumption(List<Double> averageTapConsumption) {
+		this.averageTapConsumption = averageTapConsumption;
+	}
+
+	public List<Double> getAverageShowerConsumption() {
+		return averageShowerConsumption;
+	}
+
+	public void setAverageShowerConsumption(List<Double> averageShowerConsumption) {
+		this.averageShowerConsumption = averageShowerConsumption;
+	}
+
+	public List<Double> getAverageUrinalConsumption() {
+		return averageUrinalConsumption;
+	}
+
+	public void setAverageUrinalConsumption(List<Double> averageUrinalConsumption) {
+		this.averageUrinalConsumption = averageUrinalConsumption;
+	}
+
+	public List<Double> getAverageDrinkingWaterConsumption() {
+		return averageDrinkingWaterConsumption;
+	}
+
+	public void setAverageDrinkingWaterConsumption(List<Double> averageDrinkingWaterConsumption) {
+		this.averageDrinkingWaterConsumption = averageDrinkingWaterConsumption;
+	}
+
+	
+	
+	// methods
+
+	
+}

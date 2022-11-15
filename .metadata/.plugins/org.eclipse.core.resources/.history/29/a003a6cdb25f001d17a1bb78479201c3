@@ -1,0 +1,13 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class ToiletConsumption {
+
+	// Consumo por aparelho
+	private Double toilet; // vaso
+
+	// Consumo médio (per capita) diário por aparelho;
+	private Double averageConsumptionOfTheToilet;
+}

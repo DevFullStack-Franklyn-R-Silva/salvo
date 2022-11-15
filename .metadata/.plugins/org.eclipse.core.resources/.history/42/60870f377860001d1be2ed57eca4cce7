@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: water-consumption-config-server
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+greeting-service:
+  greeting: "Holla"
+  default-value: "Mundo"

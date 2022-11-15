@@ -1,0 +1,7 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+
+public interface Users {
+
+	public static  Integer numberOfUsers = null;
+}

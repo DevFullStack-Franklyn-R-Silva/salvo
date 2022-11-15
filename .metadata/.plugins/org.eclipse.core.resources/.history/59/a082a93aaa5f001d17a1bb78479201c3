@@ -1,0 +1,46 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+public class Irrigation {
+	
+	/*
+	 * irrigationArea é a área a ser irrigada (m²)
+	 * appliedBlade é o consumo de água por metro quadrado de grama (litros/m²) 
+	 * */
+	private Double irrigationArea;
+	private Double appliedBlade;
+	
+	// Constructors
+	public Irrigation() {
+		super();
+	}
+
+	public Irrigation(Double irrigationArea, Double appliedBlade) {
+		super();
+		this.irrigationArea = irrigationArea;
+		this.appliedBlade = appliedBlade;
+	}
+	
+	// get e set
+	public Double getIrrigationArea() {
+		return irrigationArea;
+	}
+
+	public void setIrrigationArea(Double irrigationArea) {
+		this.irrigationArea = irrigationArea;
+	}
+
+	public Double getAppliedBlade() {
+		return appliedBlade;
+	}
+
+	public void setAppliedBlade(Double appliedBlade) {
+		this.appliedBlade = appliedBlade;
+	}
+	
+	// methods
+
+	public Double areaToBeIrrigated() {
+		double irrigationConsumption = irrigationArea * appliedBlade;
+		return irrigationConsumption;
+	}
+}

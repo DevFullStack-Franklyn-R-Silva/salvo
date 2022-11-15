@@ -1,0 +1,8 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation"><rhs name\="com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation"/></lhs><lhs name\="java.lang.Enum"><rhs name\="java.math.RoundingMode"/><rhs name\="javax.persistence.GenerationType"/><rhs name\="javax.persistence.TemporalType"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="java.math.RoundingMode"/><rhs name\="javax.persistence.GenerationType"/><rhs name\="javax.persistence.TemporalType"/></lhs><lhs name\="com.github.hadesfranklyn.ufal.waterconsumption.model.Consumption"><rhs name\="com.github.hadesfranklyn.ufal.waterconsumption.model.Consumption"/></lhs><lhs name\="com.github.hadesfranklyn.ufal.waterconsumption.model.Users"><rhs name\="com.github.hadesfranklyn.ufal.waterconsumption.model.ShowerConsumption"/></lhs><lhs name\="com.github.hadesfranklyn.ufal.waterconsumption.model.ShowerConsumption"><rhs name\="com.github.hadesfranklyn.ufal.waterconsumption.model.ShowerConsumption"/></lhs></history>
+content_assist_number_of_computers=19
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=22
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

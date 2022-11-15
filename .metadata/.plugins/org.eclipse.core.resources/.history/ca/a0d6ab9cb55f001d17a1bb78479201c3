@@ -1,0 +1,15 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.repositories.IrrigationRepository;
+
+@Service
+public class IrrigationService {
+	
+	@Autowired
+	private IrrigationRepository repository;
+	
+	
+}

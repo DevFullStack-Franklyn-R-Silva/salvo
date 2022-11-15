@@ -1,0 +1,9 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+public class DrinkingFountainConsumption {
+	// Consumo por aparelho
+	private Double drinkingFountain; // bebedouro
+
+	// Consumo médio (per capita) diário por aparelho
+	private Double averageDrinkingWaterConsumption;
+}

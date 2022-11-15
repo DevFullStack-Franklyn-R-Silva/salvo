@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: greeting-service
+  config:
+    import: optional:configserver:http://localhost:8888/
+  spring:
+    config:
+      profile: prod
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+water-consumption-service:
+  irrigation-area: 100.0
+  applied-blade: 1.0

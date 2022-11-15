@@ -1,0 +1,21 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.services;
+
+import java.text.ParseException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation;
+import com.github.hadesfranklyn.ufal.waterconsumption.repositories.IrrigationRepository;
+
+@Service
+public class DBService {
+
+
+	@Autowired
+	private IrrigationRepository irrigationRepository;
+	
+	public void instantieteTestDatabase() throws ParseException {
+		Irrigation irrigation = new Irrigation(null, null)
+	}
+}

@@ -1,0 +1,10 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+public class ToiletConsumption {
+
+	// Consumo por aparelho
+	private Double toilet; // vaso
+
+	// Consumo médio (per capita) diário por aparelho;
+	private Double averageConsumptionOfTheToilet;
+}

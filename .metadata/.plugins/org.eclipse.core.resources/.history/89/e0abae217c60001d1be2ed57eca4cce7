@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: water-consumption-service
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+water-consumption-config-server:
+  irrigationArea: 600.0
+  appliedBlade: 2.0

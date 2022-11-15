@@ -1,0 +1,11 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+public class ShowerConsumption {
+	// Consumo por aparelho
+
+	private Double shower; // chuveiro
+	
+
+	// Consumo médio (per capita) diário por aparelho
+	private Double averageShowerConsumption;
+}

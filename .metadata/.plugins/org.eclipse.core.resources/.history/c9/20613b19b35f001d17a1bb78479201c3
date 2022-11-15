@@ -1,0 +1,71 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class TapConsumption implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	// Consumo por aparelho
+	private Double faucet; // torneira
+
+	// Consumo médio (per capita) diário por aparelho;
+	private Double averageTapConsumption;
+	private Users numberOfUsers;
+	
+	// constructors
+	public TapConsumption() {
+		super();
+	}
+
+	public TapConsumption(Long id, Double faucet, Double averageTapConsumption, Users numberOfUsers) {
+		super();
+		this.id = id;
+		this.faucet = faucet;
+		this.averageTapConsumption = averageTapConsumption;
+		this.numberOfUsers = numberOfUsers;
+	}
+
+	// get and set
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Double getFaucet() {
+		return faucet;
+	}
+
+	public void setFaucet(Double faucet) {
+		this.faucet = faucet;
+	}
+
+	public Double getAverageTapConsumption() {
+		return averageTapConsumption;
+	}
+
+	public void setAverageTapConsumption(Double averageTapConsumption) {
+		this.averageTapConsumption = averageTapConsumption;
+	}
+
+	public Users getNumberOfUsers() {
+		return numberOfUsers;
+	}
+
+	public void setNumberOfUsers(Users numberOfUsers) {
+		this.numberOfUsers = numberOfUsers;
+	}
+
+}

@@ -1,0 +1,26 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.stereotype.Service;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.repositories.IrrigationRepository;
+
+@Service
+public class IrrigationService {
+	
+	@Autowired
+	private IrrigationRepository repository;
+	
+	public Page<Irrigation> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
+		UserSS user = UserService.authenticated();
+		if (user == null) {
+			throw new AuthorizationException("Acesso negado");
+		}
+		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
+		Cliente cliente = clienteService.find(user.getId());
+		return repository.findByCliente(cliente, pageRequest);
+	}
+}

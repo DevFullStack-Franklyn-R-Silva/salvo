@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: water-consumption-service
+  config:
+    import: optional:configserver:http://localhost:8888/
+  cloud:
+    config:
+      profile: qa
+  profiles:
+    active:
+    - native
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+water-consumption-service:
+  irrigation-area: 100.0
+  applied-blade: 1.0

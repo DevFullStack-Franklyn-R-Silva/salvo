@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: water-consumption-service
+  profiles:
+    active:
+    - native
+    
+water-consumption-service:
+  irrigation-area: 100.0
+  applied-blade: 1.0

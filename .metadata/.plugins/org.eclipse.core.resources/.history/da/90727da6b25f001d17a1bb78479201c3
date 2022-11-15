@@ -1,0 +1,9 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+public class UrinalConsumption {
+	
+	// Consumo por aparelho
+		private Double urinal; // mictorio
+	// Consumo médio (per capita) diário por aparelho
+	private Double averageUrinalConsumption;
+}

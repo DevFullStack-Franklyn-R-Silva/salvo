@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: water-consumption
+  profiles:
+    active:
+    - native

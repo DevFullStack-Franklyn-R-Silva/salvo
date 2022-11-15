@@ -1,0 +1,18 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+public class Consumption {
+
+
+	private Integer numberOfUsers;
+	private Double toilet; //vaso
+	private Double faucet; //torneira
+	private Double shower; //chuveiro
+	private Double urinal; //mictorio
+	private Double drinkingFountain; // bebedouro
+
+	
+
+	//methods
+	
+	
+}

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: water-consumption-service
+water-consumption-service:
+  irrigationArea: 200.0
+  appliedBlade: 2.0

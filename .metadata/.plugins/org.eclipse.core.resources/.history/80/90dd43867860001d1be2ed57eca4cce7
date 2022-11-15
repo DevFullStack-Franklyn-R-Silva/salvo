@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: water-consumption-service
+  profiles:
+    active:
+    - native
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include:
+#        - '*'
+water-consumption-service:
+  irrigationArea: 200.0
+  appliedBlade: 2.0

@@ -1,0 +1,5 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.config;
+
+public class IrrigationConfiguration {
+
+}

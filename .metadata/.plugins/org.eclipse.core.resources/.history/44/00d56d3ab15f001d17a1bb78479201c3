@@ -1,0 +1,35 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class ShowerConsumption implements Users{
+//	private static final long serialVersionUID = 1L;
+
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private Long id;
+//	
+//	// Consumo por aparelho
+//	private Double shower; // chuveiro
+//	
+//	// Consumo médio (per capita) diário por aparelho
+//	private Double averageShowerConsumption;
+//
+//
+//
+//	public ShowerConsumption() {
+//		super();
+//	}
+//
+//	
+//	
+//	public ShowerConsumption(Long id, Double shower, Double averageShowerConsumption) {
+//		super();
+//		this.id = id;
+//		this.shower = shower;
+//		this.averageShowerConsumption = averageShowerConsumption;
+//	}
+	
+	
+}

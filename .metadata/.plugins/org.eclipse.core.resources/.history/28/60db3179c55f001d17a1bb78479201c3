@@ -1,0 +1,65 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.controllers;
+
+import java.net.URI;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.dtos.IrrigationDTO;
+import com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation;
+import com.github.hadesfranklyn.ufal.waterconsumption.services.IrrigationService;
+
+@RestController
+@RequestMapping(value = "/irrigations")
+public class IrrigationController {
+
+	@Autowired
+	private IrrigationService service;
+
+	@GetMapping
+	public Page<IrrigationDTO> findAll(Pageable pageable) {
+		return service.findAll(pageable);
+	}
+
+	@GetMapping(value = "/{id}")
+	public IrrigationDTO findById(@PathVariable Long id) {
+		return service.findById(id);
+	}
+
+	@PostMapping
+	public ResponseEntity<IrrigationDTO> insert(@Valid @RequestBody IrrigationDTO objDTO) {
+		Irrigation newObj = service.insert(objDTO);
+
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
+
+		return ResponseEntity.created(uri).build();
+	}
+
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<IrrigationDTO> update(@PathVariable("id") Long id, @Valid @RequestBody IrrigationDTO objDTO) {
+		IrrigationDTO newObj = new IrrigationDTO(service.update(id, objDTO));
+
+		return ResponseEntity.ok().body(newObj);
+
+	}
+	
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
+
+}

@@ -1,0 +1,41 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class DrinkingFountainConsumption implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	// Consumo por aparelho
+	private Double drinkingFountain; // bebedouro
+
+	// Consumo médio (per capita) diário por aparelho
+	private Double averageDrinkingWaterConsumption;
+
+	private Users numberOfUsers;
+
+	// constructors
+	public DrinkingFountainConsumption() {
+		super();
+	}
+
+	public DrinkingFountainConsumption(Long id, Double drinkingFountain, Double averageDrinkingWaterConsumption,
+			Users numberOfUsers) {
+		super();
+		this.id = id;
+		this.drinkingFountain = drinkingFountain;
+		this.averageDrinkingWaterConsumption = averageDrinkingWaterConsumption;
+		this.numberOfUsers = numberOfUsers;
+	}
+
+	
+}

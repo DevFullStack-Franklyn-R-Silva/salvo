@@ -1,0 +1,5 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.model;
+
+public class Consumption {
+
+}

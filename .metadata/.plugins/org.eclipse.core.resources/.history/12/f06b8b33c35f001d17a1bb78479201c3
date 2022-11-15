@@ -1,0 +1,83 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.services;
+
+import java.util.Optional;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.github.hadesfranklyn.ufal.waterconsumption.dtos.IrrigationDTO;
+import com.github.hadesfranklyn.ufal.waterconsumption.model.Irrigation;
+import com.github.hadesfranklyn.ufal.waterconsumption.repositories.IrrigationRepository;
+import com.github.hadesfranklyn.ufal.waterconsumption.services.exceptions.ObjectNotFoundException;
+
+@Service
+public class IrrigationService {
+	
+	@Autowired
+	private IrrigationRepository repository;
+	
+
+	public Page<IrrigationDTO> findAll(Pageable pageable) {
+		Page<Irrigation> result = repository.findAll(pageable);
+		Page<IrrigationDTO> page = result.map(x -> new IrrigationDTO(x));
+		return page;
+	}
+	
+
+
+	@Transactional(readOnly = true)
+	public IrrigationDTO findById(Long id) {
+		Irrigation result = repository.findById(id).get();
+		IrrigationDTO dto = new IrrigationDTO(result);
+		return dto;
+	}
+
+//	public Irrigation findById(Long id) {
+//		Optional<Irrigation> obj = repository.findById(id);
+//		return obj.orElseThrow(() -> new ObjectNotFoundException(
+//				"Objeto não encontrado! Id: " + id + ", Tipo: " + Integer.class.getName()));
+//	}
+
+
+	public Irrigation insert(IrrigationDTO objDTO) {
+		return repository.save(new Irrigation(null, objDTO.getIrrigationArea(), objDTO.getAppliedBlade()));
+	}
+
+
+
+//	public Irrigation update(Long id, @Valid IrrigationDTO objDTO) {
+//		IrrigationDTO oldObj = findById(id);
+//
+//		if (findById(objDTO.getId()) != null && findById(objDTO.getId()).getId() != id) {
+//			throw new ObjectNotFoundException(
+//					"Objeto não encontrado! Id: " + id + ", Tipo: " + Irrigation.class.getName());
+//		}
+//
+//		oldObj.setIrrigationArea(objDTO.getIrrigationArea());
+//		oldObj.setAppliedBlade(objDTO.getAppliedBlade());;
+//	
+//
+//		return repository.save(new Irrigation(null, oldObj.getIrrigationArea(), oldObj.getAppliedBlade()));
+//	}
+
+
+	public void delete(Long id) {
+		IrrigationDTO obj = findById(id);
+
+		repository.deleteById(obj.getId());
+	}
+
+	@Transactional
+	public IrrigationDTO update(IrrigationDTO dto) {
+		
+		Irrigation movie = repository.findById(dto.getId()).get();
+
+		return new IrrigationDTO(movie);
+	}
+	
+}

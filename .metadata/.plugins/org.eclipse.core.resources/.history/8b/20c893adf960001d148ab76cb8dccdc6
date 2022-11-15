@@ -1,0 +1,5 @@
+package com.github.hadesfranklyn.cambioservice.repository;
+
+public interface CambioRepository {
+
+}

@@ -1,0 +1,9 @@
+package com.github.hadesfranklyn.ufal.waterconsumption.services;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class IrrigationService {
+	
+	
+}
